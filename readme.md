@@ -1,4 +1,4 @@
-# Task3-Full-Stack-JS-Intership
+# Task4-Full-Stack-JS-Intership
 
 # eShop - "Beauty Beach"
 
