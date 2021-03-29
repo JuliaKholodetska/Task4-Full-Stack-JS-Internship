@@ -1,4 +1,4 @@
-# Task3-Full-Stack-JS-Intership
+# Task4-Full-Stack-JS-Intership
 
 # eShop - "Beauty Beach"
 
@@ -15,6 +15,7 @@ Cosmetics store which contains products of different types of the company Inglot
 - React
 - Redux
 - Express
+- MongoDB
 
 # Quick Start
 

@@ -16,7 +16,6 @@ const data = {
 	],
 	products: [
 		{
-			id: 1,
 			name: "Inglot All covered concealer",
 			category: "Face",
 			image: "/images/p-1.jpg",
@@ -29,7 +28,6 @@ const data = {
 				"Was developed especially for the delicate under eye skin. Waterproof and silky formula perfectly covers imperfections and shades under eyes. It provides very natural and long-lasting effect.",
 		},
 		{
-			id: 2,
 			name: "Inglot Sparkler highlighter",
 			category: "Face",
 			image: "/images/p-2.jpg",
@@ -42,7 +40,6 @@ const data = {
 				"A delicate, baked Soft Sparkler for face, eyes and body adds a sophisticated finish to your makeup. A subtle combination of colors with the diversity of shimmering particles brings out the inner glow of your skin.",
 		},
 		{
-			id: 3,
 			name: "Inglot Mattifying loose powder",
 			category: "Face",
 			image: "/images/p-3.jpg",
@@ -55,7 +52,6 @@ const data = {
 				"Loose powder ideal to combat shiny skin. Unique spherical polymers and hybrid silicone powder provide the soft focus effect and make this the ultimate mattifier. Perfect for setting foundation without buildup, and mattifying any surface.Perfect for Sport, on Stage, and in the Studio.",
 		},
 		{
-			id: 4,
 			name: "Inglot Mattifying under makeup",
 			category: "Face",
 			image: "/images/p-4.jpg",
@@ -68,7 +64,6 @@ const data = {
 				"Hypoallergenic Mattifying Under Makeup Base with its smooth, gel consistency softens and thoroughly mattifies the skin preparing it for long-lasting, flawless makeup. Moreover, the product’s special formula gives the effect of evening out minor wrinkles, giving the soft and velvety feel to your skin. It absorbs the excess of sebum without drying out the skin.",
 		},
 		{
-			id: 5,
 			name: "Inglot Cream foundation",
 			category: "Face",
 			image: "/images/p-5.jpg",
@@ -81,7 +76,6 @@ const data = {
 				"Long lasting and transfer resistant foundation that blends perfectly without clogging pores. Protects the skin and smoothes textural difference. Provides fairly strong coverage.",
 		},
 		{
-			id: 6,
 			name: "Inglot Starlight stick highlighter",
 			category: "Face",
 			image: "/images/p-6.jpg",
@@ -94,7 +88,6 @@ const data = {
 				"Add more glow and radiance to your skin with Starlight Stick Highlighter and enjoy it for hours!",
 		},
 		{
-			id: 7,
 			name: "Inglot Secret volume mascara",
 			category: "Face",
 			image: "/images/p-7.jpg",
@@ -107,7 +100,6 @@ const data = {
 				"This is the key to unleashing the secret to thicker, longer, and more defined lashes. With a densely packed silicone brush intense, yet very natural volume can be achieved. Secret Volume Mascara is suitable for most lash types and will not smudge or flake.",
 		},
 		{
-			id: 8,
 			name: "Inglot Makeup brush 15bjf",
 			category: "Face",
 			image: "/images/p-8.jpg",
@@ -120,7 +112,6 @@ const data = {
 				"Best for: bronzing powder, blush, pressed powder, loose powder. A classic brush for blush and sculpting powder application. Synthetic version available",
 		},
 		{
-			id: 9,
 			name: "Inglot Body Sparkles 111",
 			category: "Eyes",
 			image: "/images/p-9.jpg",
@@ -133,7 +124,6 @@ const data = {
 				"Brilliant glitter flakes that reflect light and add color and another dimension. Come in variety of shapes and colors to be used on nails, lips, and all over the body.",
 		},
 		{
-			id: 10,
 			name: "Inglot Multi-Action Toner",
 			category: "Face",
 			image: "/images/p-10.jpg",
