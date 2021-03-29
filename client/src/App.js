@@ -4,6 +4,7 @@ import { BrowserRouter, Link, Route } from "react-router-dom";
 import CartPage from "./pages/CartPage";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
+import SigninPadge from "./pages/SigninPage";
 
 function App() {
 	const cart = useSelector((state) => state.cart);
@@ -31,6 +32,7 @@ function App() {
 					<Route path="/cart/:id?" component={CartPage}></Route>
 					<Route path="/product/:id" component={ProductPage}></Route>
 					<Route path="/" component={HomePage} exact></Route>
+					<Route path="/signin" component={SigninPadge}></Route>
 				</main>
 				<footer className="row center">All rights reserved</footer>
 			</div>
