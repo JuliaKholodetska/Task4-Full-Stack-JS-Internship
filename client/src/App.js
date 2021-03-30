@@ -5,6 +5,7 @@ import { signout } from "./actions/userActions";
 import CartPage from "./pages/CartPage";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
+import RegisterPage from "./pages/RegisterPage";
 import SigninPadge from "./pages/SigninPage";
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
 					<Route path="/product/:id" component={ProductPage}></Route>
 					<Route path="/" component={HomePage} exact></Route>
 					<Route path="/signin" component={SigninPadge}></Route>
+					<Route path="/register" component={RegisterPage}></Route>
 				</main>
 				<footer className="row center">All rights reserved</footer>
 			</div>

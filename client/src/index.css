@@ -186,6 +186,10 @@ img {
 	color: #20a020;
 }
 
+.loading {
+	display: block !important;
+}
+
 .error {
 	color: #a02020;
 }
