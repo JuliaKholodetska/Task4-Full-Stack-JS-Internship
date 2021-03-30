@@ -54,7 +54,7 @@ export default function ProductPage(props) {
 								<li>Price : ${product.price}</li>
 								<li>
 									Description:
-									<p>{product.dedcription}</p>
+									<p>{product.description}</p>
 								</li>
 							</ul>
 						</div>

@@ -4,6 +4,7 @@ import { BrowserRouter, Link, Route } from "react-router-dom";
 import { signout } from "./actions/userActions";
 import CartPage from "./pages/CartPage";
 import HomePage from "./pages/HomePage";
+import PaymentMethodPage from "./pages/PaymentMethodPage";
 import ProductPage from "./pages/ProductPage";
 import RegisterPage from "./pages/RegisterPage";
 import ShippingAdressPage from "./pages/ShippingAdressPage";
@@ -59,6 +60,7 @@ function App() {
 					<Route path="/signin" component={SigninPadge}></Route>
 					<Route path="/register" component={RegisterPage}></Route>
 					<Route path="/shipping" component={ShippingAdressPage}></Route>
+					<Route path="/payment" component={PaymentMethodPage}></Route>
 				</main>
 				<footer className="row center">All rights reserved</footer>
 			</div>
