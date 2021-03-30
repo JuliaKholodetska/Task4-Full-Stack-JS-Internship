@@ -2,11 +2,13 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter, Link, Route } from "react-router-dom";
 import { signout } from "./actions/userActions";
+import SearchBox from "./components/SearchBox";
 import CartPage from "./pages/CartPage";
 import HomePage from "./pages/HomePage";
 import PaymentMethodPage from "./pages/PaymentMethodPage";
 import ProductPage from "./pages/ProductPage";
 import RegisterPage from "./pages/RegisterPage";
+import SearchPage from "./pages/SearchPage";
 import ShippingAdressPage from "./pages/ShippingAdressPage";
 import SigninPadge from "./pages/SigninPage";
 
@@ -28,6 +30,13 @@ function App() {
 						<Link className="brand" to="/">
 							Beauty Beach
 						</Link>
+					</div>
+					<div className="search-container">
+						<Route
+							render={({ history }) => (
+								<SearchBox history={history}></SearchBox>
+							)}
+						></Route>
 					</div>
 					<div>
 						<Link className="fas fa-shopping-cart" to="/cart">
@@ -61,6 +70,11 @@ function App() {
 					<Route path="/register" component={RegisterPage}></Route>
 					<Route path="/shipping" component={ShippingAdressPage}></Route>
 					<Route path="/payment" component={PaymentMethodPage}></Route>
+					<Route
+						path="/search/name/:name?"
+						component={SearchPage}
+						exact
+					></Route>
 				</main>
 				<footer className="row center">All rights reserved</footer>
 			</div>
