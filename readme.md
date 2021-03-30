@@ -15,6 +15,7 @@ Cosmetics store which contains products of different types of the company Inglot
 - React
 - Redux
 - Express
+- MongoDB
 
 # Quick Start
 
