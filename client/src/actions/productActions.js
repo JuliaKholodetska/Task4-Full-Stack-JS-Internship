@@ -8,15 +8,17 @@ const {
 export const listProducts = ({
 	name = "",
 	category = "",
+	order = "",
 	min = 0,
 	max = 0,
+	rating = 0,
 }) => async (dispatch) => {
 	dispatch({
 		type: PRODUCT_LIST.REQUEST,
 	});
 	try {
 		const { data } = await Axios.get(
-			`/api/products/?name=${name}&category=${category}&min=${min}&max=${max}`
+			`/api/products/?name=${name}&category=${category}&min=${min}&max=${max}&rating=${rating}&order=${order}`
 		);
 		dispatch({ type: PRODUCT_LIST.SUCCESS, payload: data });
 	} catch (error) {
