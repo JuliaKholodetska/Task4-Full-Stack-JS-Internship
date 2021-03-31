@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter, Link, Route } from "react-router-dom";
+import { listProductCategories } from "./actions/productActions";
 import { signout } from "./actions/userActions";
 import SearchBox from "./components/SearchBox";
 import CartPage from "./pages/CartPage";
@@ -21,7 +22,9 @@ function App() {
 	const signoutHandler = () => {
 		dispatch(signout());
 	};
-
+	useEffect(() => {
+		dispatch(listProductCategories());
+	}, [dispatch]);
 	return (
 		<BrowserRouter>
 			<div className="grid-container">
@@ -72,6 +75,16 @@ function App() {
 					<Route path="/payment" component={PaymentMethodPage}></Route>
 					<Route
 						path="/search/name/:name?"
+						component={SearchPage}
+						exact
+					></Route>
+					<Route
+						path="/search/category/:category"
+						component={SearchPage}
+						exact
+					></Route>
+					<Route
+						path="/search/category/:category/name/:name"
 						component={SearchPage}
 						exact
 					></Route>
