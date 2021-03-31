@@ -1,8 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter, Link, Route } from "react-router-dom";
 import { listProductCategories } from "./actions/productActions";
 import { signout } from "./actions/userActions";
+import LoadingBox from "./components/LoadingBox";
+import MessageBox from "./components/MessageBox";
 import SearchBox from "./components/SearchBox";
 import CartPage from "./pages/CartPage";
 import HomePage from "./pages/HomePage";
@@ -15,6 +17,7 @@ import SigninPadge from "./pages/SigninPage";
 
 function App() {
 	const cart = useSelector((state) => state.cart);
+	const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
 	const { cartItems } = cart;
 	const userSignin = useSelector((state) => state.userSignin);
 	const { userInfo } = userSignin;
@@ -22,6 +25,12 @@ function App() {
 	const signoutHandler = () => {
 		dispatch(signout());
 	};
+	const productCategoryList = useSelector((state) => state.productCategoryList);
+	const {
+		loading: loadingCategories,
+		error: errorCategories,
+		categories,
+	} = productCategoryList;
 	useEffect(() => {
 		dispatch(listProductCategories());
 	}, [dispatch]);
@@ -30,18 +39,26 @@ function App() {
 			<div className="grid-container">
 				<header className="row">
 					<div>
+						<button
+							type="button"
+							className="open-sidebar"
+							onClick={() => setSidebarIsOpen(true)}
+						>
+							<i className="fa fa-bars"></i>
+						</button>
 						<Link className="brand" to="/">
 							Beauty Beach
 						</Link>
 					</div>
-					<div className="search-container">
-						<Route
-							render={({ history }) => (
-								<SearchBox history={history}></SearchBox>
-							)}
-						></Route>
-					</div>
-					<div>
+
+					<div className="row">
+						<div className="search-container">
+							<Route
+								render={({ history }) => (
+									<SearchBox history={history}></SearchBox>
+								)}
+							></Route>
+						</div>
 						<Link className="fas fa-shopping-cart" to="/cart">
 							{cartItems.length > 0 && (
 								<span className="badge">{cartItems.length}</span>
@@ -65,6 +82,36 @@ function App() {
 						)}
 					</div>
 				</header>
+				<aside className={sidebarIsOpen ? "open" : ""}>
+					<ul className="categories">
+						<li>
+							<strong>Categories</strong>
+							<button
+								onClick={() => setSidebarIsOpen(false)}
+								className="close-sidebar"
+								type="button"
+							>
+								<i className="fa fa-close"></i>
+							</button>
+						</li>
+						{loadingCategories ? (
+							<LoadingBox></LoadingBox>
+						) : errorCategories ? (
+							<MessageBox variant="danger">{errorCategories}</MessageBox>
+						) : (
+							categories.map((c) => (
+								<li key={c}>
+									<Link
+										to={`/search/category/${c}`}
+										onClick={() => setSidebarIsOpen(false)}
+									>
+										{c}
+									</Link>
+								</li>
+							))
+						)}
+					</ul>
+				</aside>
 				<main>
 					<Route path="/cart/:id?" component={CartPage}></Route>
 					<Route path="/product/:id" component={ProductPage}></Route>
