@@ -5,15 +5,15 @@ import Product from "../models/productModel.js";
 const productRouter = express.Router();
 
 productRouter.get(
-  '/',
-  expressAsyncHandler(async (req, res) => {
-    const name = req.query.name || '';
-    const nameFilter = name ? { name: { $regex: name, $options: 'i' } } : {};
-    const products = await Product.find({
-      ...nameFilter,
-    })
-    res.send(products);
-  })
+	"/",
+	expressAsyncHandler(async (req, res) => {
+		const name = req.query.name || "";
+		const nameFilter = name ? { name: { $regex: name, $options: "i" } } : {};
+		const products = await Product.find({
+			...nameFilter,
+		});
+		res.send(products);
+	})
 );
 
 productRouter.get(
