@@ -5,15 +5,18 @@ const {
 	PRODUCT_CATEGORY_LIST,
 } = require("../constants/productConstants");
 
-export const listProducts = ({ name = "", category = "" }) => async (
-	dispatch
-) => {
+export const listProducts = ({
+	name = "",
+	category = "",
+	min = 0,
+	max = 0,
+}) => async (dispatch) => {
 	dispatch({
 		type: PRODUCT_LIST.REQUEST,
 	});
 	try {
 		const { data } = await Axios.get(
-			`/api/products/?name=${name}&category=${category}`
+			`/api/products/?name=${name}&category=${category}&min=${min}&max=${max}`
 		);
 		dispatch({ type: PRODUCT_LIST.SUCCESS, payload: data });
 	} catch (error) {

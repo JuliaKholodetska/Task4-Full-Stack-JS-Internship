@@ -34,8 +34,8 @@ header {
 main {
 	grid-area: main;
 	padding: 1rem;
-	margin-left: 150px;
-	margin-right: 150px;
+	/* margin-left: 150px;
+	margin-right: 150px; */
 }
 
 footer {
@@ -129,6 +129,8 @@ a.brand {
 
 .row.center {
 	justify-content: center;
+	margin-left: 150px;
+	margin-right: 150px;
 }
 
 .row-product.center {
@@ -142,7 +144,10 @@ a.brand {
 	justify-content: space-between;
 	align-items: center;
 }
-
+.footer-label {
+	margin-left: 65rem;
+	margin-right: 65rem;
+}
 img {
 	border-radius: 0.1rem;
 	width: 160px;
@@ -200,11 +205,16 @@ img {
 }
 
 .col-1 {
-	flex: 1 2 25rem;
+	flex: 1 1 25rem;
 }
-
 .col-2 {
-	flex: 1 2 25rem;
+	flex: 2 1 50rem;
+}
+.col-3 {
+	flex: 32 1 80rem;
+}
+.row.top {
+	align-items: flex-start;
 }
 
 .alert {
@@ -341,4 +351,8 @@ aside li {
 }
 button.close-sidebar {
 	padding: 0.3rem 0.8rem;
+}
+.active {
+	font-weight: bold;
+	color: #f8cfcf;
 }

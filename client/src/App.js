@@ -135,8 +135,15 @@ function App() {
 						component={SearchPage}
 						exact
 					></Route>
+					<Route
+						path="/search/category/:category/name/:name/min/:min/max/:max"
+						component={SearchPage}
+						exact
+					></Route>
 				</main>
-				<footer className="row center">All rights reserved</footer>
+				<footer className="row">
+					<label className="footer-label">All rights reserved</label>
+				</footer>
 			</div>
 		</BrowserRouter>
 	);
