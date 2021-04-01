@@ -9,6 +9,7 @@ export default function CartPage(props) {
 	const quantity = props.location.search
 		? Number(props.location.search.split("=")[1])
 		: 1;
+	console.log(props.location);
 	const cart = useSelector((state) => state.cart);
 	const { cartItems } = cart;
 	const dispatch = useDispatch();
