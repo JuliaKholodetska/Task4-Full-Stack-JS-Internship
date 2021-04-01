@@ -34,8 +34,6 @@ header {
 main {
 	grid-area: main;
 	padding: 1rem;
-	/* margin-left: 150px;
-	margin-right: 150px; */
 }
 
 footer {

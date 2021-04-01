@@ -1,3 +1,11 @@
+export const lowest = "lowest";
+export const highest = "highest";
+export const toprated = "toprated";
+export const defaultNameValue = "all";
+export const defaultCategoryValue = "all";
+export const defaultMinValue = 0;
+export const defaultMaxValue = 0;
+export const defaultRatingValue = 0;
 export const prices = [
 	{
 		name: "Any",
@@ -5,19 +13,19 @@ export const prices = [
 		max: 0,
 	},
 	{
-		name: `$1 to $10`,
-		min: 1,
+		name: `less then $10`,
+		min: 0,
 		max: 10,
 	},
 	{
-		name: `$10 to $100`,
-		min: 10,
-		max: 100,
+		name: `less then $50`,
+		min: 0,
+		max: 50,
 	},
 	{
-		name: `$100 to $1000`,
-		min: 100,
-		max: 1000,
+		name: `less then $110`,
+		min: 0,
+		max: 110,
 	},
 ];
 export const ratings = [

@@ -5,9 +5,10 @@ import { useParams } from "react-router";
 import MessageBox from "../components/MessageBox";
 import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../actions/productActions";
+import { defaultNameValue } from "../utils";
 
 export default function HomePage() {
-	const { name = "all" } = useParams();
+	const { name = defaultNameValue } = useParams();
 	const dispatch = useDispatch();
 	const productList = useSelector((state) => state.productList);
 	const { loading, error, products } = productList;
