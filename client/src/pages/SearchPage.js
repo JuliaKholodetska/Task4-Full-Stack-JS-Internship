@@ -27,9 +27,9 @@ export default function SearchPage(props) {
 			</div>
 			<div className="row top">
 				<div className="col-1">
-					<h3>Department</h3>
+					<h3>Category</h3>
 					<ul>
-						<li>Category 1</li>
+						<li>General</li>
 					</ul>
 				</div>
 				<div className="col-3">
