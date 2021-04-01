@@ -113,7 +113,7 @@ function App() {
 					</ul>
 				</aside>
 				<main>
-					<Route path="/cart/:id?" component={CartPage}></Route>
+					<Route path="/cart" component={CartPage}></Route>
 					<Route path="/product/:id" component={ProductPage}></Route>
 					<Route path="/" component={HomePage} exact></Route>
 					<Route path="/signin" component={SigninPadge}></Route>
