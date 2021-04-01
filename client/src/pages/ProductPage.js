@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { addToCart } from "../actions/cartActions";
 import { detailsProduct } from "../actions/productActions";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
@@ -10,14 +11,16 @@ export default function ProductPage(props) {
 	const dispatch = useDispatch();
 	const productId = props.match.params.id;
 	const [quantity, setQty] = useState(1);
-	const productDetails = useSelector((state) => state.productDetails);
+	const { productDetails } = useSelector((state) => ({
+		productDetails: state.productDetails,
+	}));
 	const { loading, error, product } = productDetails;
 
 	useEffect(() => {
 		dispatch(detailsProduct(productId));
 	}, [dispatch, productId]);
 	const addToCartHandler = () => {
-		props.history.push(`/cart/${productId}?quantity=${quantity}`);
+		dispatch(addToCart(productId, quantity));
 	};
 
 	return (
