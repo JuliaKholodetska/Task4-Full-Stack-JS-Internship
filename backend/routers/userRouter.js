@@ -27,7 +27,7 @@ userRouter.post(
 					isAdmin: user.isAdmin,
 					token: generateToken(user),
 				});
-				return;
+				return res.send();
 			}
 		}
 		res.status(401).send({ message: "Invalid email or password" });
@@ -42,14 +42,18 @@ userRouter.post(
 			email: req.body.email,
 			password: bcrypt.hashSync(req.body.password, 8),
 		});
-		const createdUser = await user.save();
-		res.send({
-			_id: createdUser._id,
-			name: createdUser.name,
-			email: createdUser.email,
-			isAdmin: createdUser.isAdmin,
-			token: generateToken(createdUser),
-		});
+		if (user !== user) {
+			const createdUser = await user.save();
+			res.send({
+				_id: createdUser._id,
+				name: createdUser.name,
+				email: createdUser.email,
+				isAdmin: createdUser.isAdmin,
+				token: generateToken(createdUser),
+			});
+		} else {
+			res.status(401).send({ message: "User already exists" });
+		}
 	})
 );
 
