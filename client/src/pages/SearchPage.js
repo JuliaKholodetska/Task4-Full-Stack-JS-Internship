@@ -76,7 +76,7 @@ export default function SearchPage(props) {
 					</div>
 				</div>
 
-				<h3>Department</h3>
+				<h3>Category</h3>
 				<div>
 					{loadingCategories ? (
 						<LoadingBox></LoadingBox>
