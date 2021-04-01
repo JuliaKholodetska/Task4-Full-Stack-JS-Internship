@@ -17,9 +17,10 @@ userRouter.get(
 userRouter.post(
 	"/signin",
 	expressAsyncHandler(async (req, res) => {
-		const user = await User.findOne({ email: req.body.email });
+		const { email, password } = req.body;
+		const user = await User.findOne({ email: email });
 		if (user) {
-			if (bcrypt.compareSync(req.body.password, user.password)) {
+			if (bcrypt.compareSync(password, user.password)) {
 				res.send({
 					_id: user._id,
 					name: user.name,
@@ -27,7 +28,7 @@ userRouter.post(
 					isAdmin: user.isAdmin,
 					token: generateToken(user),
 				});
-				return res.send();
+				return;
 			}
 		}
 		res.status(401).send({ message: "Invalid email or password" });
@@ -37,12 +38,14 @@ userRouter.post(
 userRouter.post(
 	"/register",
 	expressAsyncHandler(async (req, res) => {
+		const { name, email, password } = req.body;
 		const user = new User({
-			name: req.body.name,
-			email: req.body.email,
-			password: bcrypt.hashSync(req.body.password, 8),
+			name: name,
+			email: email,
+			password: bcrypt.hashSync(password, 8),
 		});
-		if (user !== user) {
+		const userPosible = await User.findOne({ email: email });
+		if (!userPosible) {
 			const createdUser = await user.save();
 			res.send({
 				_id: createdUser._id,
@@ -52,7 +55,7 @@ userRouter.post(
 				token: generateToken(createdUser),
 			});
 		} else {
-			res.status(401).send({ message: "User already exists" });
+			res.status(401).send({ message: "User Already exist" });
 		}
 	})
 );
