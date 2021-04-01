@@ -1,27 +1,16 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart, removeFromCart } from "../actions/cartActions";
 import MessageBox from "../components/MessageBox";
 
 export default function CartPage(props) {
-	// // const productId = props.match.params.id;
-	// // const quantity = props.location.search
-	// 	? Number(props.location.search.split("=")[1])
-	// 	: 1;
 	const cart = useSelector((state) => state.cart);
 	const { cartItems } = cart;
 	const dispatch = useDispatch();
-	// useEffect(() => {
-	// 	if (productId) {
-	// 		dispatch(addToCart(productId, quantity));
-	// 	}
-	//}, [dispatch, productId, quantity]);
-
 	const removeFromCartHandler = (id) => {
 		dispatch(removeFromCart(id));
 	};
-
 	const checkoutHandler = () => {
 		props.history.push("/signin?redirect=shipping");
 	};
