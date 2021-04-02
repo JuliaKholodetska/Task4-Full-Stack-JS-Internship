@@ -4,12 +4,12 @@ const {
 	PRODUCT_DETAILS,
 } = require("../constants/productConstants");
 
-export const listProducts = () => async (dispatch) => {
+export const listProducts = ({ name = "" }) => async (dispatch) => {
 	dispatch({
 		type: PRODUCT_LIST.REQUEST,
 	});
 	try {
-		const { data } = await Axios.get("/api/products");
+		const { data } = await Axios.get(`/api/products/?name=${name}`);
 		dispatch({ type: PRODUCT_LIST.SUCCESS, payload: data });
 	} catch (error) {
 		dispatch({ type: PRODUCT_LIST.FAIL, payload: error.message });
