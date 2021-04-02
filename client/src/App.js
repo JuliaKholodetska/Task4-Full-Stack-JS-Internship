@@ -50,7 +50,6 @@ function App() {
 							Beauty Beach
 						</Link>
 					</div>
-
 					<div className="row">
 						<div className="search-container">
 							<Route
