@@ -18,7 +18,7 @@ export default function PaymentMethodPage(props) {
 	};
 	return (
 		<div>
-			<CheckoutSteps step1 step2 step3></CheckoutSteps>
+			<CheckoutSteps stepSignIn stepShipping stepPaymentMethod></CheckoutSteps>
 			<form className="form" onSubmit={submitHandler}>
 				<div>
 					<h1>Payment Method</h1>
