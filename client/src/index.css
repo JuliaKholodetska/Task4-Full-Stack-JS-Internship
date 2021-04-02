@@ -143,8 +143,8 @@ a.brand {
 	align-items: center;
 }
 .footer-label {
-	margin-left: 65rem;
-	margin-right: 65rem;
+	display: block;
+	margin: 0 auto;
 }
 img {
 	border-radius: 0.1rem;
