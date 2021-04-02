@@ -6,7 +6,7 @@ export default function CheckoutSteps(props) {
 			<div className={props.stepSignIn ? "active" : ""}>Sign in</div>
 			<div className={props.stepShipping ? "active" : ""}>Shipping</div>
 			<div className={props.stepPaymentMethod ? "active" : ""}>Payment</div>
-			<div className={props.step4 ? "active" : ""}>Place Order</div>
+			<div className={props.stepPlaceOrder ? "active" : ""}>Place Order</div>
 		</div>
 	);
 }
