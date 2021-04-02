@@ -3,7 +3,7 @@ import bcrypt from "bcryptjs";
 import User from "../models/userModel.js";
 import { generateToken } from "../utils.js";
 
-const userControllers = {
+const userController = {
 	getUser: expressAsyncHandler(async (req, res) => {
 		const users = await User.find({});
 		res.send(users);
@@ -47,4 +47,4 @@ const userControllers = {
 		}
 	}),
 };
-export default userControllers;
+export default userController;

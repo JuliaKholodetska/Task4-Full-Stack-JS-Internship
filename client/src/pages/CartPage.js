@@ -14,7 +14,6 @@ export default function CartPage(props) {
 	const checkoutHandler = () => {
 		props.history.push("/signin?redirect=shipping");
 	};
-
 	return (
 		<div className="row">
 			<div className="col-2">
