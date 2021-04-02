@@ -11,9 +11,8 @@ export default function ProductPage(props) {
 	const dispatch = useDispatch();
 	const productId = props.match.params.id;
 	const [quantity, setQty] = useState(1);
-	const { productDetails, cart } = useSelector((state) => ({
+	const { productDetails } = useSelector((state) => ({
 		productDetails: state.productDetails,
-		cart: state.cart,
 	}));
 	const { loading, error, product } = productDetails;
 
@@ -21,7 +20,7 @@ export default function ProductPage(props) {
 		dispatch(detailsProduct(productId));
 	}, [dispatch, productId]);
 	const addToCartHandler = () => {
-		dispatch(addToCart(productId, quantity, cart));
+		dispatch(addToCart(productId, quantity));
 	};
 
 	return (
