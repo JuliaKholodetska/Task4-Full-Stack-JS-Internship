@@ -24,6 +24,7 @@
     "express-async-handler": "^1.1.4",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.2",
+    "require": "^2.4.20",
     "validator": "^13.5.2"
   },
   "devDependencies": {
