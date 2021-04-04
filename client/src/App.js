@@ -9,6 +9,7 @@ import SearchBox from "./components/SearchBox";
 import CartPage from "./pages/CartPage";
 import HomePage from "./pages/HomePage";
 import PaymentMethodPage from "./pages/PaymentMethodPage";
+import PlaceOrderPage from "./pages/PlaceOrderPage";
 import ProductPage from "./pages/ProductPage";
 import RegisterPage from "./pages/RegisterPage";
 import SearchPage from "./pages/SearchPage";
@@ -118,6 +119,7 @@ function App() {
 					<Route path="/signin" component={SigninPadge}></Route>
 					<Route path="/register" component={RegisterPage}></Route>
 					<Route path="/shipping" component={ShippingAdressPage}></Route>
+					<Route path="/placeorder" component={PlaceOrderPage}></Route>
 					<Route path="/payment" component={PaymentMethodPage}></Route>
 					<Route
 						path="/search/name/:name?"
