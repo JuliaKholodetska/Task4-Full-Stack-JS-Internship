@@ -3,6 +3,7 @@ import { CART_EMPTY } from "../constants/cartConstants";
 import {
 	ORDER_CREATE,
 	ORDER_DETAILS,
+	ORDER_MINE_LIST,
 	ORDER_PAY,
 } from "../constants/orderConstants";
 
@@ -69,5 +70,26 @@ export const payOrder = (order, paymentResult) => async (
 				? error.response.data.message
 				: error.message;
 		dispatch({ type: ORDER_PAY.FAIL, payload: message });
+	}
+};
+
+export const listOrderMine = () => async (dispatch, getState) => {
+	dispatch({ type: ORDER_MINE_LIST.REQUEST });
+	const {
+		userSignin: { userInfo },
+	} = getState();
+	try {
+		const { data } = await Axios.get("/api/orders/mine", {
+			headers: {
+				Authorization: `Bearer ${userInfo.token}`,
+			},
+		});
+		dispatch({ type: ORDER_MINE_LIST.SUCCESS, payload: data });
+	} catch (error) {
+		const message =
+			error.response && error.response.data.message
+				? error.response.data.message
+				: error.message;
+		dispatch({ type: ORDER_MINE_LIST.FAIL, payload: message });
 	}
 };

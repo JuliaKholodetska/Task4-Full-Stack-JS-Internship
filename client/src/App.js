@@ -16,7 +16,9 @@ import RegisterPage from "./pages/RegisterPage";
 import SearchPage from "./pages/SearchPage";
 import ShippingAdressPage from "./pages/ShippingAdressPage";
 import SigninPadge from "./pages/SigninPage";
-
+import OrderHistoryPage from "./pages/OrderHistoryPage";
+import ProfilePage from "./pages/ProfilePage";
+import PrivateRoute from "./components/PrivateRoute";
 function App() {
 	const cart = useSelector((state) => state.cart);
 	const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
@@ -72,6 +74,12 @@ function App() {
 								</Link>
 								<ul className="dropdown-content">
 									<li>
+										<Link to="/profile">User Profile</Link>
+									</li>
+									<li>
+										<Link to="/orderhistory">Order History</Link>
+									</li>
+									<li>
 										<Link to="#signout" onClick={signoutHandler}>
 											Sign Out
 										</Link>
@@ -123,6 +131,8 @@ function App() {
 					<Route path="/placeorder" component={PlaceOrderPage}></Route>
 					<Route path="/payment" component={PaymentMethodPage}></Route>
 					<Route path="/order/:id" component={OrderPage}></Route>
+					<Route path="/orderhistory" component={OrderHistoryPage}></Route>
+					<PrivateRoute path="/profile" component={ProfilePage}></PrivateRoute>
 					<Route
 						path="/search/name/:name?"
 						component={SearchPage}

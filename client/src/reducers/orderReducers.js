@@ -1,6 +1,7 @@
 import {
 	ORDER_CREATE,
 	ORDER_DETAILS,
+	ORDER_MINE_LIST,
 	ORDER_PAY,
 } from "../constants/orderConstants";
 
@@ -42,6 +43,19 @@ export const orderPayReducer = (state = {}, action) => {
 			return { loading: false, error: action.payload };
 		case ORDER_PAY.RESET:
 			return {};
+		default:
+			return state;
+	}
+};
+
+export const orderMineListReducer = (state = { orders: [] }, action) => {
+	switch (action.type) {
+		case ORDER_MINE_LIST.REQUEST:
+			return { loading: true };
+		case ORDER_MINE_LIST.SUCCESS:
+			return { loading: false, orders: action.payload };
+		case ORDER_MINE_LIST.FAIL:
+			return { loading: false, error: action.payload };
 		default:
 			return state;
 	}
