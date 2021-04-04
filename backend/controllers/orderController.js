@@ -32,5 +32,13 @@ const orderController = {
 				.send({ message: "New Order Created", order: createdOrder });
 		}
 	}),
+	getById: expressAsyncHandler(async (req, res) => {
+		const order = await Order.findById(req.params.id);
+		if (order) {
+			res.send(order);
+		} else {
+			res.status(404).send({ message: "Order Not Found" });
+		}
+	}),
 };
 export default orderController;

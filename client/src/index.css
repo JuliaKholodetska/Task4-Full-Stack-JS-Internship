@@ -166,6 +166,8 @@ img {
 .card-body {
 	padding: 1rem;
 	background-color: #fbf0f0;
+	display: block;
+	margin: 0 auto;
 }
 
 .card-body > * {
@@ -175,7 +177,7 @@ img {
 	border: 0.1rem #ffffff solid;
 	background-color: #fbf0f0;
 	margin: 1rem;
-	width: 900px;
+	width: 700px;
 	padding: 1rem;
 	background-color: #fbf0f0;
 }

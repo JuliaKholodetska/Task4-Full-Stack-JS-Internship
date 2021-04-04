@@ -6,4 +6,6 @@ const orderRouter = express.Router();
 
 orderRouter.post("/", isAuth, orderController.createOrder);
 
+orderRouter.get("/:id", isAuth, orderController.getById);
+
 export default orderRouter;

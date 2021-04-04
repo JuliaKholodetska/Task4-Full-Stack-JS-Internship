@@ -69,7 +69,7 @@ export default function CartPage(props) {
 					</ul>
 				)}
 			</div>
-			<div className="col-1-cart">
+			<div className="col-1">
 				<div className="card card-body">
 					<ul>
 						<li>
