@@ -239,7 +239,10 @@ img {
 	color: #e02020;
 	background-color: #ffe0e0e0;
 }
-
+.alert-success {
+	color: #20a020;
+	background-color: #eeffe0;
+}
 .link-main-page {
 	font: 3.5rem "Poiret One", cursive;
 	color: rgb(8, 3, 3);
