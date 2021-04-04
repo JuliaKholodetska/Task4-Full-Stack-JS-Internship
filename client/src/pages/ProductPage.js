@@ -10,7 +10,7 @@ import Rating from "../components/Rating";
 export default function ProductPage(props) {
 	const dispatch = useDispatch();
 	const productId = props.match.params.id;
-	const [quantity, setQty] = useState(1);
+	const [quantity, setquantity] = useState(1);
 	const { productDetails } = useSelector((state) => ({
 		productDetails: state.productDetails,
 	}));
@@ -86,11 +86,11 @@ export default function ProductPage(props) {
 										<>
 											<li>
 												<div className="row">
-													<div>Qty</div>
+													<div>quantity</div>
 													<div>
 														<select
 															value={quantity}
-															onChange={(e) => setQty(e.target.value)}
+															onChange={(e) => setquantity(e.target.value)}
 														>
 															{[...Array(product.countInStock).keys()].map(
 																(x) => (

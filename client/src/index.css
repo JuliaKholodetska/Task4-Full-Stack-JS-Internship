@@ -171,7 +171,14 @@ img {
 .card-body > * {
 	margin-bottom: 0.2rem;
 }
-
+.card-body-order {
+	border: 0.1rem #ffffff solid;
+	background-color: #fbf0f0;
+	margin: 1rem;
+	width: 900px;
+	padding: 1rem;
+	background-color: #fbf0f0;
+}
 .price {
 	font-size: 2rem;
 }
